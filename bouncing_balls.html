@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      
+      div.ballCount {
+      	display: inline-block;
+      	height: 75px;
+      	width: 100px;
+      	border: solid green 2px;
+       	margin: 25px 25px 25px 25px;
+      	color: green;
+      	text-align: center;
+      }
+      
+      div.playerScore {
+      	display: inline-block;
+      	height: 75px;
+      	width: 100px;
+      	border: solid red 2px;
+       	margin: 25px 25px 25px 25px;
+      	color: red;
+      	text-align: center;
+      }
+      
+      div.targetValue {
+      	position: absolute;
+      	border: solid black 1px;
+      	color: white;
+      	text-align:center;
+      	height: 30px;
+      	width: 40px;
+      }
+      
+    </style>
+  </head>
+  <body>
+		<div style="position:absolute; top: 100px; left: 200px;">	
+			<table style="border:0px;margin:15px;">
+		  		<tr>
+		  			<td>How many players up to 5?</td><td><input id="idNumPlayers" type="number" min="1" max="5" value="3" style="width:4em;" oninput="setGamePlayers(this.value)" /></td>
+		  		</tr>
+		  		<tr>
+		  			<td>How long to play (seconds)?</td><td style="text-align:right;"><input id="idHowLong" type="number" value="15"  style="width:4em;" onchange="setGameTime(this.value)"/></td>
+				</tr>
+				<tr><td colspan="2">&nbsp;</td></tr>
+		  		<tr>
+		  			<td colspan="2" style="text-align:center;"><input id="startAnimationButtonId" type="button" value="Start Bouncing Around" onclick="animateCanvas()" /> </td>
+		  		</tr>
+			</table>
+			<div class="ballCount" id="player1Count"></div>
+	 		<div class="playerScore" id="player1Score"></div><br />
+			<div class="ballCount" id="player2Count"></div>
+	 		<div class="playerScore" id="player2Score"></div><br />
+			<div class="ballCount" id="player3Count"></div>
+	 		<div class="playerScore" id="player3Score"></div><br />
+			<div class="ballCount" id="player4Count"></div>
+	 		<div class="playerScore" id="player4Score"></div><br />
+			<div class="ballCount" id="player5Count"></div>
+	 		<div class="playerScore" id="player5Score"></div><br />
+		</div>
+		<div id="canvasContainer" style="left:700px;top:100px;position:absolute;">
+		    <canvas tabindex='0' id="myCanvas" width="400" height="800" style="border: solid black 5px;"></canvas>
+			<br>
+		</div>
+    <script src="bouncing.js"></script>
+  </body>
+</html>      
